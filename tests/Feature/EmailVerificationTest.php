@@ -12,69 +12,69 @@ use Laravel\Fortify\Features;
 use Laravel\Jetstream\Features as JetstreamFeatures;
 use Tests\TestCase;
 
-class EmailVerificationTest extends TestCase
+class EVerificationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_email_verification_screen_can_be_rendered()
+    public function test_e_verification_screen_can_be_rendered()
     {
-        if (! Features::enabled(Features::emailVerification())) {
-            return $this->markTestSkipped('Email verification not enabled.');
+        if (! Features::enabled(Features::eVerification())) {
+            return $this->markTestSkipped('E verification not enabled.');
         }
 
         $user = User::factory()->withPersonalTeam()->create([
-            'email_verified_at' => null,
+            'e_verified_at' => null,
         ]);
 
-        $response = $this->actingAs($user)->get('/email/verify');
+        $response = $this->actingAs($user)->get('/e/verify');
 
         $response->assertStatus(200);
     }
 
-    public function test_email_can_be_verified()
+    public function test_e_can_be_verified()
     {
-        if (! Features::enabled(Features::emailVerification())) {
-            return $this->markTestSkipped('Email verification not enabled.');
+        if (! Features::enabled(Features::eVerification())) {
+            return $this->markTestSkipped('E verification not enabled.');
         }
 
         Event::fake();
 
         $user = User::factory()->create([
-            'email_verified_at' => null,
+            'e_verified_at' => null,
         ]);
 
         $verificationUrl = URL::temporarySignedRoute(
             'verification.verify',
             now()->addMinutes(60),
-            ['id' => $user->id, 'hash' => sha1($user->email)]
+            ['id' => $user->id, 'hash' => sha1($user->e)]
         );
 
         $response = $this->actingAs($user)->get($verificationUrl);
 
         Event::assertDispatched(Verified::class);
 
-        $this->assertTrue($user->fresh()->hasVerifiedEmail());
+        $this->assertTrue($user->fresh()->hasVerifiedE());
         $response->assertRedirect(RouteServiceProvider::HOME.'?verified=1');
     }
 
-    public function test_email_can_not_verified_with_invalid_hash()
+    public function test_e_can_not_verified_with_invalid_hash()
     {
-        if (! Features::enabled(Features::emailVerification())) {
-            return $this->markTestSkipped('Email verification not enabled.');
+        if (! Features::enabled(Features::eVerification())) {
+            return $this->markTestSkipped('E verification not enabled.');
         }
 
         $user = User::factory()->create([
-            'email_verified_at' => null,
+            'e_verified_at' => null,
         ]);
 
         $verificationUrl = URL::temporarySignedRoute(
             'verification.verify',
             now()->addMinutes(60),
-            ['id' => $user->id, 'hash' => sha1('wrong-email')]
+            ['id' => $user->id, 'hash' => sha1('wrong-e')]
         );
 
         $this->actingAs($user)->get($verificationUrl);
 
-        $this->assertFalse($user->fresh()->hasVerifiedEmail());
+        $this->assertFalse($user->fresh()->hasVerifiedE());
     }
 }
