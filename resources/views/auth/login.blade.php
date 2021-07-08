@@ -11,6 +11,7 @@
                 {{ session('status') }}
             </div>
         @endif
+        <h1>Iniciar sesion</h1>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
