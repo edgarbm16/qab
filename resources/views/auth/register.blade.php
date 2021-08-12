@@ -1,64 +1,32 @@
 <x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                {!! htmlFormSnippet() !!}
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-jet-label>
+    <section class="login py-5 border-top-1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-8 align-item-center">
+                    <div class="border border">
+                        <h3 class="bg-gray p-4">CREAR TU CUENTA</h3>
+                        <x-jet-validation-errors class="mb-4" />
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <fieldset class="p-4">
+                                <input type="text" placeholder="{{ __('Name') }}" class="border p-3 w-100 my-2" name="name" :value="old('name')" required autofocus autocomplete="name" >
+                                <input type="email" placeholder="{{ __('Email') }}" class="border p-3 w-100 my-2" name="email" :value="old('email')" required>
+                                <input type="password" placeholder="{{ __('Password') }}" class="border p-3 w-100 my-2" name="password" required autocomplete="new-password" >
+                                <input type="password" placeholder="{{ __('Confirm Password') }}" class="border p-3 w-100 my-2" name="password_confirmation" required autocomplete="new-password" >
+                                <div class="mt-4">
+                                    {!! htmlFormSnippet() !!}
+                                </div>
+                                <div class="loggedin-forgot d-inline-flex my-3">
+                                        <!-- <input type="checkbox" id="registering" class="mt-1"> -->
+                                        <!-- <label for="registering" class="px-2">By registering, you accept our <a class="text-primary font-weight-bold" href="terms-condition.html">Terms & Conditions</a></label> -->
+                                        <label for="registering" class="px-2"> <a class="text-primary font-weight-bold" href="{{ route('login') }}">{{ __('Already registered?') }}</a></label>
+                                </div>
+                                <button type="submit" class="d-block py-3 px-4 bg-primary text-white border-0 rounded font-weight-bold"> Registrar </button>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
             </div>
-        </form>
-    </x-jet-authentication-card>
+        </div>
+    </section>
 </x-guest-layout>
