@@ -108,8 +108,8 @@
                           </a>
                           <!-- Dropdown list -->
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('profile.show') }}">Mi Perfil</a>
-                              <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Mi Tablero</a>
+                              <a class="dropdown-item" href="{{ route('profile.show') }}">Perfil</a>
+                              <a class="dropdown-item" href="{{ route('admin.servicios') }}">Servicios</a>
                               <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
                               <form id="logout-form" method="POST" action="{{ route('logout') }}">
                               @csrf															
@@ -142,9 +142,7 @@
                           @endif
                         @endauth
                   @endif
-                  <!-- <li class="nav-item">
-                    <a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a>
-                  </li> -->
+                  
 						    </ul>
 					</div>
 				</nav>

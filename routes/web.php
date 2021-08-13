@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Servicios;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminServicioComponent;
+use App\Http\Livewire\Admin\AdminAddServicioComponent;
 use App\Http\Livewire\HomeComponent;
 
 /*
@@ -31,20 +33,14 @@ Route::get('/',HomeComponent::class);
 //Para el usuario
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
-    // Route::get('/dashboard', function(){
-    //     return view('dashboard');
-    // })->name('dashboard');
 
 });
 
 //Para el admin
 Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
-    // Route::get('/servicios',Servicios::class);
-    // Route::get('/dashboard', function(){
-    //     return view('dashboard');
-    // })->name('dashboard');
-
+    Route::get('/admin/servicios', AdminServicioComponent::class)->name('admin.servicios');
+    Route::get('/admin/servicio/add', AdminAddServicioComponent::class)->name('admin.addservicio');
 });
 
 
