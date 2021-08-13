@@ -10,7 +10,7 @@
             <thead>
               <tr>
                 <th class="text-center">ID</th>
-                <!-- <th class="text-center">IMAGEN</th> -->
+                <th class="text-center">IMAGEN</th>
                 <th class="text-center">NOMBRE DEL SERVICIO</th>
                 <th class="text-center">DESCRIPCIÓN</th>
                 <th class="text-center">CARACTERÍSTICAS</th>
@@ -26,15 +26,10 @@
                 <td class="text-center">
                     {{$servicio->id}}
                 </td>
-                <!-- <td class="product-thumb">
-                  <img width="80px" height="auto" src="images/products/products-1.jpg" alt="image description">
-                </td> -->
                 <td class="text-center">
-                  <!-- <h3 class="title">Macbook Pro 15inch</h3>
-                  <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-                  <span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-                  <span class="status active"><strong>Status</strong>Active</span>
-                  <span class="location"><strong>Location</strong>Dhaka,Bangladesh</span> -->
+                  <img src="{{asset('assets/images/servicios')}}/{{$servicio->img}}" width="70" >
+                </td>
+                <td class="text-center">
                   {{$servicio->nombre}}
                 </td>
                 <td class="text-center">

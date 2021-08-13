@@ -20,6 +20,8 @@ class CreateServiciosTable extends Migration
             $table->string('caracteristicas',500);
             $table->integer('costo');
             $table->string('tiempo',20);
+            $table->string('img')->nullable();
+            $table->text('images')->nullable();
             $table->timestamps();
         });
     }
