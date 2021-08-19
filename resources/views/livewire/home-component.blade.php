@@ -1,7 +1,7 @@
 <div>
 
   <!--===============================
-  =            Hero Area            =
+  =   Carousel de Imagenes          =
   ================================-->
 
   <section class="bg-1 text-center overly">
@@ -51,13 +51,10 @@
     <!-- Container End -->
   </section>
 
-  <!--===================================
-  =            Client Slider            =
-  ====================================-->
 
 
   <!--===========================================
-  =            Popular deals section            =
+  =            Lista de Servicios               =
   ============================================-->
 
   <section class="container">
@@ -120,7 +117,7 @@
 
 
   <!--==========================================
-  =            All Category Section            =
+  =            Sección de categorias           =
   ===========================================-->
 
   <section class=" section">
@@ -134,7 +131,6 @@
             <p>A través de nuestra pagina podrás encontrar mas servicios tales como</p>
           </div>
           <div class="row">
-            <!-- Category list -->
             <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
               <div class="category-block">
                 <div class="header">
@@ -144,12 +140,9 @@
                 <ul class="category-list" >
                   <li><a href="#">Laptops <span>93</span></a></li>
                   <li><a href="#">Computadoras de escritorio <span>233</span></a></li>
-                  <!-- <li><a href="category.html">Microsoft  <span>183</span></a></li>
-                  <li><a href="category.html">Monitors <span>343</span></a></li> -->
                 </ul>
               </div>
-            </div> <!-- /Category List -->
-            <!-- Category list -->
+            </div>
             <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
               <div class="category-block">
                 <div class="header">
@@ -159,12 +152,9 @@
                 <ul class="category-list" >
                   <li><a href="#">PS4<span>393</span></a></li>
                   <li><a href="#">XBOX<span>23</span></a></li>
-                  <!-- <li><a href="category.html">Restaurants  <span>13</span></a></li>
-                  <li><a href="category.html">Food Track<span>43</span></a></li> -->
                 </ul>
               </div>
-            </div> <!-- /Category List -->
-            <!-- Category list -->
+            </div> 
             <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
               <div class="category-block">
                 <div class="header">
@@ -178,8 +168,7 @@
                   <li><a href="#">Impresoras<span>33</span></a></li>
                 </ul>
               </div>
-            </div> <!-- /Category List -->
-            <!-- Category list -->
+            </div> 
             <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
               <div class="category-block">
                 <div class="header">
@@ -194,7 +183,7 @@
                   <li><a href="category.html">Apple <span>143</span></a></li>
                 </ul>
               </div>
-            </div> <!-- /Category List -->
+            </div> 
            
             
             
@@ -207,7 +196,7 @@
 
 
   <!--====================================
-  =            Call to Action            =
+  =            Ultima sección            =
   =====================================-->
 
   <section class="call-to-action overly bg-3 section-sm"style="max-height:440px;">

@@ -1,9 +1,7 @@
 <div>
     <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
-        <!-- Recently Favorited -->
         <div class="widget dashboard-container my-adslist">
           <h3 class="widget-header">LISTA DE SERVICIOS</h3>
-          <!-- <a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a> -->
           <a href="{{ route('admin.addservicio') }}" class="btn btn-main-sm"><i class="fa fa-plus-circle"></i> Agregar servicio</a>
           <br><br>
           @if(Session::has('message'))

@@ -40,15 +40,15 @@ class AdminEditServicioComponent extends Component
 
     public function updateServicio()
     {
-        // $this->validate([
-        //     'nombre' => 'required',
-        //     'slug' => 'required',
-        //     'descripcion' => 'required',
-        //     'caracteristicas' => 'required',
-        //     'costo' => 'required|numeric',
-        //     'tiempo' => 'required',
-        //     'img' => 'required|mimes:jpeg,png,jpg',
-        // ]);
+        $this->validate([
+            'nombre' => 'required',
+            'slug' => 'required',
+            'descripcion' => 'required',
+            'caracteristicas' => 'required',
+            'costo' => 'required|numeric',
+            'tiempo' => 'required',
+            'img' => 'required|mimes:jpeg,png,jpg',
+        ]);
 
         $servicio = Servicio::find($this->servicio_id);
         $servicio->nombre = $this->nombre;

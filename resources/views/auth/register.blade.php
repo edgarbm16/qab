@@ -18,8 +18,6 @@
                                 </div>
                                 <br>
                                 <div class="loggedin-forgot d-inline-flex my-3">
-                                        <!-- <input type="checkbox" id="registering" class="mt-1"> -->
-                                        <!-- <label for="registering" class="px-2">By registering, you accept our <a class="text-primary font-weight-bold" href="terms-condition.html">Terms & Conditions</a></label> -->
                                         <label for="registering" class="px-2"> <a class="text-primary font-weight-bold" href="{{ route('login') }}">{{ __('Already registered?') }}</a></label>
                                 </div>
                                 <button type="submit" class="d-block py-3 px-4 bg-primary text-white border-0 rounded font-weight-bold"> Registrar </button>
