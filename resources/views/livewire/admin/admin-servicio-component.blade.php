@@ -6,6 +6,11 @@
           <!-- <a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a> -->
           <a href="{{ route('admin.addservicio') }}" class="btn btn-main-sm"><i class="fa fa-plus-circle"></i> Agregar servicio</a>
           <br><br>
+          @if(Session::has('message'))
+            <div class="alert alert-success" role="alert">
+                {{Session::get('message')}}
+            </div>
+          @endif
           <table class="table table-responsive product-dashboard-table">
             <thead>
               <tr>
@@ -47,18 +52,13 @@
                 <td class="action" data-title="Action">
                   <div class="">
                     <ul class="list-inline justify-content-center">
-                      <!-- <li class="list-inline-item">
-                        <a data-toggle="tooltip" data-placement="top" title="view" class="view" href="category.html">
-                          <i class="fa fa-eye"></i>
-                        </a>
-                      </li> -->
                       <li class="list-inline-item">
-                        <a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="">
+                        <a class="edit" data-toggle="tooltip" data-placement="top" title="Editar" href="{{ route('admin.editservicio',['servicio_slug'=>$servicio->slug])}}">
                           <i class="fa fa-pencil"></i>
                         </a>
                       </li>
                       <li class="list-inline-item">
-                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="">
+                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Eliminar" href="" wire:click.prevent="deleteServicio({{$servicio->id}})">
                           <i class="fa fa-trash"></i>
                         </a>
                       </li>

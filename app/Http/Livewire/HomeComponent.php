@@ -3,11 +3,13 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Servicio;
 
 class HomeComponent extends Component
 {
     public function render()
     {
-        return view('livewire.home-component')->layout('layouts.base');
+        $lservicio =  Servicio::all();
+        return view('livewire.home-component',['lservicio'=>$lservicio])->layout('layouts.base');
     }
 }

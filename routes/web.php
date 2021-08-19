@@ -6,6 +6,7 @@ use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminServicioComponent;
 use App\Http\Livewire\Admin\AdminAddServicioComponent;
+use App\Http\Livewire\Admin\AdminEditServicioComponent;
 use App\Http\Livewire\HomeComponent;
 
 /*
@@ -41,6 +42,7 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/servicios', AdminServicioComponent::class)->name('admin.servicios');
     Route::get('/admin/servicio/add', AdminAddServicioComponent::class)->name('admin.addservicio');
+    Route::get('/admin/servicio/edit/{servicio_slug}', AdminEditServicioComponent::class)->name('admin.editservicio');
 });
 
 

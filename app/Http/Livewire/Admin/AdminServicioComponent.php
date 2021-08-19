@@ -9,6 +9,14 @@ use Livewire\WithPagination;
 class AdminServicioComponent extends Component
 {
     use WithPagination;
+
+    public function deleteServicio($id)
+    {
+        $servicio = Servicio::find($id);
+        $servicio->delete();
+        session()->flash('message','Servicio eliminado con éxito');
+    }
+
     public function render()
     {
         $servicios = Servicio::paginate(5);

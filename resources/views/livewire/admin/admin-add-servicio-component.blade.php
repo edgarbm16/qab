@@ -12,13 +12,37 @@
                         @endif
                         <form wire:submit.prevent="addServicio">
                             <fieldset class="p-4">
-                                <input type="text" placeholder="Nombre" class="border p-3 w-100 my-2" required wire:model="nombre">
-                                <input type="text" placeholder="Descripción" class="border p-3 w-100 my-2" required wire:model="descripcion">
-                                <input type="text" placeholder="Características" class="border p-3 w-100 my-2" required wire:model="caracteristicas">
-                                <input type="number" placeholder="Costo" class="border p-3 w-100 my-2" required wire:model="costo">
-                                <input type="text" placeholder="Tiempo del servicio" class="border p-3 w-100 my-2" required wire:model="tiempo">
                                 <div>
-                                    <input type="file"  class="border p-3 w-100 my-2" required wire:model="img">
+                                    <input type="text" placeholder="Nombre" class="border p-3 w-100 my-2" required wire:model="nombre" wire:keyup="generateSlug">
+                                    <!-- <img class="start_img" id="start_nom" src="{{ asset('assets/images/mic.gif') }}"> -->
+                                </div>
+
+                                <input type="text" placeholder="Servicio URL" class="border p-3 w-75 my-2" required wire:model="slug">
+
+                                <div>
+                                    <!-- <textarea id="input_des" placeholder="Descripción" class="border p-3 w-75 my-2" rows="4" cols="50"  required wire:model="descripcion"></textarea> -->
+                                    <input type="text" placeholder="Descripción" class="border p-3 w-100 my-2" required wire:model="descripcion">
+                                    <!-- <img class="start_img" id="start_des" src="{{ asset('assets/images/mic.gif') }}"> -->
+                                </div>
+
+                                <div>
+                                    <!-- <textarea id="input_car" placeholder="Características" class="border p-3 w-75 my-2" rows="4" cols="50"  required wire:model="caracteristicas"></textarea> -->
+                                    <input type="text" placeholder="Características" class="border p-3 w-100 my-2" required wire:model="caracteristicas">
+                                    <!-- <img class="start_img" id="start_car" src="{{ asset('assets/images/mic.gif') }}"> -->
+                                </div>
+
+                                <div>
+                                    <input type="number" placeholder="Costo" class="border p-3 w-100 my-2" required wire:model="costo">
+                                    <!-- <img class="start_img" id="start_cos" src="{{ asset('assets/images/mic.gif') }}"> -->
+                                </div>
+
+                                <div>
+                                    <input type="text" placeholder="Tiempo del servicio" class="border p-3 w-100 my-2" required wire:model="tiempo">
+                                    <!-- <img class="start_img" id="start_tie" src="{{ asset('assets/images/mic.gif') }}"> -->
+                                </div>
+
+                                <div>
+                                    <input type="file"  class="border p-3 w-75 my-2" required wire:model="img">
                                     @if($img)
                                         <img src="{{$img->temporaryUrl()}}" width="100">
                                     @endif

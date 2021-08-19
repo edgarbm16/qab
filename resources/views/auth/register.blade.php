@@ -16,6 +16,7 @@
                                 <div class="mt-4">
                                     {!! htmlFormSnippet() !!}
                                 </div>
+                                <br>
                                 <div class="loggedin-forgot d-inline-flex my-3">
                                         <!-- <input type="checkbox" id="registering" class="mt-1"> -->
                                         <!-- <label for="registering" class="px-2">By registering, you accept our <a class="text-primary font-weight-bold" href="terms-condition.html">Terms & Conditions</a></label> -->
